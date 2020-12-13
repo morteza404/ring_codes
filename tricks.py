@@ -211,6 +211,8 @@ print(timeit.timeit("a = 2 + 3"))
 
 # print(len(a))
 
+"""
+
 b = [[2, 2, 1, 0, 3, 1, 1, 3, 0, 1, 3, 3, 3, 2, 3, 2, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 2, 0, 1, 3, 0, 3, 0, 3, 3, 3, 3, 2, 0, 1, 0, 1, 
 2, 1, 1, 3, 0, 1, 2, 3, 3, 2, 3, 3, 0, 0, 1, 3, 1, 0, 0, 1, 2, 0, 2, 3, 1, 1, 1, 3, 2, 2, 1, 0, 1, 2, 2, 1, 0, 0, 1, 2, 0, 1, 2, 1, 1, 1, 0, 
 1, 2, 1, 3, 3, 3, 0, 0, 0, 1, 1, 3, 1, 2, 3, 3, 3, 1, 2, 1, 0, 3, 1, 2, 3, 1, 3, 2, 0, 1, 0, 3, 3, 0, 1, 0, 1, 2, 0, 2, 2, 1, 3, 2, 3, 3, 1, 
@@ -282,3 +284,45 @@ print(f"number of partitions: {len(b[0])}")
 # print(len(b[1]))
 # print(len(b[2]))
 
+"""
+
+# compute overload
+
+"""
+
+devs = []
+
+infos = [{"region":1, "zone":1, "ip":168, "weight":100.0}, 
+         {"region":1, "zone":1, "ip":169, "weight":200.0},
+         {"region":1, "zone":1, "ip":170, "weight":500.0}]
+
+for info in infos:
+    devs.append(info)
+
+print(devs)
+
+from collections import defaultdict
+        
+weighted = defaultdict(float)
+
+wanted = defaultdict(float)
+
+for dev in devs:            
+    dev_tier = (dev['region'], dev['zone'], dev['ip'])
+    for i in range(len(dev_tier) + 1):
+        tier = dev_tier[:i]
+        weighted[tier] += 0.25
+
+for dev in devs:            
+    dev_tier = (dev['region'], dev['zone'], dev['ip'])
+    for i in range(len(dev_tier) + 1):
+        tier = dev_tier[:i]
+        wanted[tier] += 0.42
+
+for dev in devs:
+    tier = (dev['region'], dev['zone'], dev['ip'])            
+    required = (wanted[tier] - weighted[tier]) / weighted[tier]
+
+print(required)
+
+"""
