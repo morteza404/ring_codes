@@ -326,3 +326,16 @@ for dev in devs:
 print(required)
 
 """
+
+# convert timestamp to datetime
+
+"""
+
+from datetime import datetime
+
+timestamp = 1607841671
+dt_object = datetime.fromtimestamp(timestamp)
+
+print("dt_object =", str(dt_object))
+
+"""
