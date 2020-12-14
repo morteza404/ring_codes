@@ -339,3 +339,50 @@ dt_object = datetime.fromtimestamp(timestamp)
 print("dt_object =", str(dt_object))
 
 """
+
+"""
+
+from collections import defaultdict
+
+# print(weighted_replicas_for_dev)
+
+devs = []
+
+infos = [{"region":"r1", "zone":"z1", "ip":"s1", "weight":100.0, "id":"d0"}, 
+         {"region":"r1", "zone":"z1", "ip":"s2", "weight":200.0, "id":"d1"},
+         {"region":"r1", "zone":"z1", "ip":"s2", "weight":50.0, "id":"d2"},
+         {"region":"r1", "zone":"z2", "ip":"s3", "weight":500.0, "id":"d3"}]
+
+for info in infos:
+    devs.append(info)
+
+# print(devs)
+
+def iter_devs():        
+    for dev in devs:
+        if dev is not None:
+            yield dev
+
+for dev in iter_devs():
+    print(dev)
+
+weighted_replicas_for_dev = {}
+
+weighted_replicas_for_dev["d0"] = 0.66
+weighted_replicas_for_dev["d1"] = 1.0
+weighted_replicas_for_dev["d2"] = 0.33
+weighted_replicas_for_dev["d3"] = 1.0
+
+weighted_replicas_by_tier = defaultdict(float)
+
+for dev in iter_devs():
+    if not dev['weight']:
+        continue
+    assigned_replicanths = weighted_replicas_for_dev[dev['id']]
+    dev_tier = (dev['region'], dev['zone'], dev['ip'], dev['id'])
+    for i in range(len(dev_tier) + 1):
+        tier = dev_tier[:i]
+        weighted_replicas_by_tier[tier] += assigned_replicanths
+print(weighted_replicas_by_tier)
+    
+"""
