@@ -1,4 +1,5 @@
 from swift.common.ring import RingBuilder
+import math
 
 devs = []
 
@@ -15,8 +16,12 @@ ring = RingBuilder(10, 3.0, 24)
 
 ring.devs = devs
 
-print(ring._build_weighted_replicas_by_tier())
+dispersed_replicas = {
+    t: {
+        'min': math.floor(r),
+        'max': math.ceil(r),
+    } for (t, r) in
+    ring._build_max_replicas_by_tier(bound=float).items()
+}
 
-# print(ring._build_wanted_replicas_by_tier())
-
-# print(ring._build_target_replicas_by_tier())
+print(dispersed_replicas)

@@ -386,3 +386,9 @@ for dev in iter_devs():
 print(weighted_replicas_by_tier)
     
 """
+
+from collections import defaultdict
+
+to_place = defaultdict(float)
+
+print(to_place["r1"])
