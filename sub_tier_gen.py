@@ -1,4 +1,5 @@
 from swift.common.ring import RingBuilder
+import itertools
 
 devs = []
 
@@ -15,4 +16,17 @@ ring = RingBuilder(10, 3.0, 24)
 
 ring.devs = devs
 
-print(ring._build_weighted_replicas_by_tier().items())
+replica_plan = ring._build_replica_plan()
+
+tier2children = ring._build_tier2children()
+
+sub_tiers = sorted(tier2children[()])
+
+sub_tier_gen = itertools.cycle(sorted(sub_tiers, key=lambda t: replica_plan[t]['target']))
+
+# t = next(sub_tier_gen)
+
+# print(t)
+
+for t in sub_tier_gen:
+    print(t)

@@ -15,4 +15,6 @@ ring = RingBuilder(10, 3.0, 24)
 
 ring.devs = devs
 
-print(ring._build_weighted_replicas_by_tier().items())
+max_overload = ring.get_required_overload()
+
+print(max_overload)

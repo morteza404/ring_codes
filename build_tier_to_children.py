@@ -15,4 +15,8 @@ ring = RingBuilder(10, 3.0, 24)
 
 ring.devs = devs
 
-print(ring._build_weighted_replicas_by_tier().items())
+tier2children = ring._build_tier2children()
+
+sub_tiers = sorted(tier2children[()])
+
+print(sub_tiers)

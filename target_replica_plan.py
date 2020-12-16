@@ -14,5 +14,6 @@ for info in infos:
 ring = RingBuilder(10, 3.0, 24)
 
 ring.devs = devs
+ring.overload = 0.5
 
 print(ring._build_target_replicas_by_tier())

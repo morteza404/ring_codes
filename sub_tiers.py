@@ -19,6 +19,6 @@ tier2children = ring._build_tier2children()
 
 print(tier2children)
 
-sub_tiers = sorted(tier2children[('r1','z2','s3')])
+sub_tiers = sorted(tier2children[('r1','z1')])
 
 print(sub_tiers)

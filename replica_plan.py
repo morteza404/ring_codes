@@ -15,4 +15,4 @@ ring = RingBuilder(10, 3.0, 24)
 
 ring.devs = devs
 
-print(ring._build_weighted_replicas_by_tier().items())
+print(ring._build_replica_plan())

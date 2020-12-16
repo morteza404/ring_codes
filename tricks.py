@@ -387,8 +387,30 @@ print(weighted_replicas_by_tier)
     
 """
 
+"""
+
 from collections import defaultdict
 
 to_place = defaultdict(float)
 
 print(to_place["r1"])
+
+"""
+
+
+"""
+import itertools
+
+name = "morteza"
+
+data = itertools.cycle(name)
+
+t = next(data)
+
+a = next(data)
+
+b = next(data)
+
+"""
+self._part_moved_bitmap = bytearray(max(2 ** (self.part_power - 3), 1))
+elapsed_hours = int(time() - self._last_part_moves_epoch) // 3600
