@@ -329,16 +329,18 @@ print(required)
 
 # convert timestamp to datetime
 
+
 """
-
 from datetime import datetime
+import time
 
-timestamp = 1607841671
+# timestamp = 1607841671
+timestamp = int(time.time()) + 446788
 dt_object = datetime.fromtimestamp(timestamp)
 
 print("dt_object =", str(dt_object))
-
 """
+
 
 """
 
@@ -412,5 +414,98 @@ a = next(data)
 b = next(data)
 
 """
-self._part_moved_bitmap = bytearray(max(2 ** (self.part_power - 3), 1))
-elapsed_hours = int(time() - self._last_part_moves_epoch) // 3600
+
+"""
+import time
+import binascii
+from datetime import datetime
+
+part_moved_bitmap = bytearray(max(2 ** (10 - 3), 1))
+
+elapsed_hours = int(time.time() - 0) // 3600
+
+# print(time.time())
+
+# print(datetime.fromtimestamp(time.time()))
+
+print(elapsed_hours)
+"""
+
+"""
+
+desired_lengths = [1024, 1024, 256]
+
+print(list(enumerate(desired_lengths)))
+
+"""
+
+# import itertools
+
+# NONE_DEV = 2 ** 16 - 1
+
+# desired_length = [0, 2, 3, 1]
+
+# print(list(itertools.repeat(NONE_DEV, 4)))
+
+"""
+from collections import defaultdict
+
+to_assign = defaultdict(list)
+
+print(to_assign[0])
+"""
+
+"""
+
+r2p2d = [[0,2,1,3],[1,0,3,2],[3,1,2,0]]
+
+def each_part_replica():    
+    for replica, part2dev in enumerate(r2p2d):
+        for part in range(len(part2dev)):
+            yield (part, replica)
+
+for part, replica in each_part_replica():
+    print(replica)
+
+"""
+
+# print(list(enumerate(r2p2d)))
+
+# part_moved_bitmap = None
+
+# part_moved_bitmap = bytearray(max(2 ** (3 - 3), 1))
+
+# print(list(part_moved_bitmap))
+
+# lst = bytearray(10)
+
+# print(list(lst))
+
+# import time
+
+# print(time.time())
+
+# print(int(1608375856.55) // 3600)
+
+# print(44 < 0xff)
+
+# print(int("0xff", 16))
+
+devs = [{"id":0, "parts":-1},{"id":1, "parts":-1}, {"id":2, "parts":-1},{"id":3, "parts":-1}]
+
+remove_devs = [{"id":0, "parts":-1},{"id":1, "parts":-1}]
+
+remove_dev_id = remove_devs.pop()['id']
+
+print(remove_dev_id)
+
+removed_devs = 0
+
+while remove_devs:
+    remove_dev_id = remove_devs.pop()['id']
+    devs[remove_dev_id] = None
+    removed_devs += 1
+
+print(removed_devs)
+
+print(devs)

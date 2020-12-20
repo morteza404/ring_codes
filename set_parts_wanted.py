@@ -11,7 +11,7 @@ for info in infos:
     devs.append(info)
 
 # ring parameters : p R m (partition power, replicas, min_part_hours)
-ring = RingBuilder(10, 3.0, 24)
+ring = RingBuilder(2, 3.0, 24)
 
 ring.devs = devs
 
