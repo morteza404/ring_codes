@@ -12,7 +12,7 @@ devs = [{'region':'r1', 'zone':'z1', 'ip':'s1', 'port':6200, 'device':'sda', 'we
 
 ring.devs = devs
 
-# ring._replica2part2dev = [[0,1,2,3],[3,2,1,0],[2,0,3,1]]
+ring._replica2part2dev = [[0,1,2,3],[3,2,1,0],[2,0,3,1]]
 
 assign_parts = defaultdict(list)
 

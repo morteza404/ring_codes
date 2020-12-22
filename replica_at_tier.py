@@ -15,7 +15,22 @@ for dev in devs:
 for dev in ring._iter_devs():
     dev['tiers'] = utils.tiers_for_dev(dev)
 
-print(devs)
+# print(devs)
 
 # for tier in dev['tiers']:
 #     print(tier)
+
+ring._replica2part2dev = [[0,1,2,3],[3,2,1,0],[2,0,3,1]]
+
+
+
+from collections import defaultdict
+
+
+for part in range(4):    
+    replicas_at_tier = defaultdict(int)
+    for dev in ring._devs_for_part(part):
+        for tier in dev['tiers']:
+            replicas_at_tier[tier] += 1
+
+print(replicas_at_tier[('r1',)])

@@ -491,6 +491,8 @@ for part, replica in each_part_replica():
 
 # print(int("0xff", 16))
 
+"""
+
 devs = [{"id":0, "parts":-1},{"id":1, "parts":-1}, {"id":2, "parts":-1},{"id":3, "parts":-1}]
 
 remove_devs = [{"id":0, "parts":-1},{"id":1, "parts":-1}]
@@ -509,3 +511,30 @@ while remove_devs:
 print(removed_devs)
 
 print(devs)
+
+"""
+
+"""
+
+import random
+
+parts = 1024
+last_part_gather_start = 0
+
+quarter_turn = (parts // 4)
+random_half = random.randint(0, parts // 2)
+
+# print(random_half)
+
+start = (last_part_gather_start + quarter_turn + random_half) % parts
+
+last_part_gather_start = start
+
+# print(last_part_gather_start)
+
+"""
+
+undispersed_dev_replicas = []
+
+if not undispersed_dev_replicas:
+    print("not")
