@@ -1,5 +1,5 @@
 
-# create slicable dictionary. normal dictionary raise value error for absent key.
+# 1) create slicable dictionary. normal dictionary raise value error for absent key.
 
 """
 from collections import defaultdict
@@ -11,7 +11,7 @@ print(data[2])
 """
 
 
-# returns the fractional and integer parts of x in a two-item tuple.
+# 2) returns the fractional and integer parts of x in a two-item tuple.
 
 """
 
@@ -22,7 +22,7 @@ print(num[1])
 
 """
 
-# To create an array of numeric values, we need to import the array module. 
+# 3) To create an array of numeric values, we need to import the array module. 
 
 """
 
@@ -34,7 +34,7 @@ print(num[2:4])
 
 """
 
-# First method to create a 1D array 
+# 4) First method to create a 1D array 
 
 """
 
@@ -44,7 +44,7 @@ print(arr)
 
 """
 
-# Second method to create a 1D array 
+# 5) Second method to create a 1D array 
 
 """
 
@@ -54,7 +54,7 @@ print(arr)
 
 """
 
-# First method to create a 2D array 
+# 6) First method to create a 2D array 
 
 """
 
@@ -64,7 +64,7 @@ print(arr)
 
 """
 
-# Second method to create a 2D array 
+# 7) Second method to create a 2D array 
 
 """
 
@@ -74,7 +74,7 @@ print(arr)
 
 """
 
-# r2p2d and devs
+# 8) r2p2d and devs
 
 """
 
@@ -110,7 +110,7 @@ print(devices)
 """
 
 
-# Display the quotient and the remainder, a//b, a%b:
+# 9) Display the quotient and the remainder, a//b, a%b:
 
 """
 x = divmod(5,2)
@@ -119,21 +119,21 @@ print(5//2,5%2)
 
 """
 
-# a >> b : shift a, b bit right i.e. a // (2 ** b)
+# 10) a >> b : shift a, b bit right i.e. a // (2 ** b)
 
 """
 print(128 >> 6)
 
 """
 
-# a << b : shift a, b bit left i.e. a * (2 ** b)
+# 11) a << b : shift a, b bit left i.e. a * (2 ** b)
 
 """
 print(32 << 1)
 
 """
 
-# different between self and cls. PEP8
+# 12) different between self and cls. PEP8
 
 # Always use self for the first argument to instance methods.
 
@@ -152,7 +152,7 @@ class Test():
 
 """
 
-# device skew
+# 13) device skew
 
 """
 wants, has = (400.0,396.0)
@@ -160,7 +160,7 @@ skew = (wants - has) / wants * 100
 print(skew)
 """
 
-# Convert Scientific Notation to Float
+# 14) Convert Scientific Notation to Float
 
 """
 
@@ -170,7 +170,7 @@ print(0.000000001 < 1e-10)
 
 """
 
-# shuffle list
+# 15) shuffle list
 
 """
 
@@ -180,6 +180,8 @@ random.shuffle(x)
 print(x)
 
 """
+
+# 16) create cycle
 
 """
 
@@ -192,24 +194,19 @@ data = itertools.cycle(name)
 # for i in data:
 #     print(i)
 
+"""
+
+# 17) compute execution time of command 
+
+"""
+
 import timeit
 
 print(timeit.timeit("a = 2 + 3"))
 
 """
 
-# import array as arr
-
-# a = arr.array('H', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-#    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-
-# print(len(a))
+# 18) get partition and replica from r2p2d
 
 """
 
@@ -286,7 +283,7 @@ print(f"number of partitions: {len(b[0])}")
 
 """
 
-# compute overload
+# 19) compute overload
 
 """
 
@@ -327,77 +324,21 @@ print(required)
 
 """
 
-# convert timestamp to datetime
+# 20) convert timestamp to datetime
 
 
-"""
+
 from datetime import datetime
 import time
 
-# timestamp = 1607841671
-timestamp = int(time.time()) + 446788
+timestamp = 1525346445.31161
+#timestamp = int(time.time()) + 446788
 dt_object = datetime.fromtimestamp(timestamp)
 
 print("dt_object =", str(dt_object))
-"""
 
 
-"""
-
-from collections import defaultdict
-
-# print(weighted_replicas_for_dev)
-
-devs = []
-
-infos = [{"region":"r1", "zone":"z1", "ip":"s1", "weight":100.0, "id":"d0"}, 
-         {"region":"r1", "zone":"z1", "ip":"s2", "weight":200.0, "id":"d1"},
-         {"region":"r1", "zone":"z1", "ip":"s2", "weight":50.0, "id":"d2"},
-         {"region":"r1", "zone":"z2", "ip":"s3", "weight":500.0, "id":"d3"}]
-
-for info in infos:
-    devs.append(info)
-
-# print(devs)
-
-def iter_devs():        
-    for dev in devs:
-        if dev is not None:
-            yield dev
-
-for dev in iter_devs():
-    print(dev)
-
-weighted_replicas_for_dev = {}
-
-weighted_replicas_for_dev["d0"] = 0.66
-weighted_replicas_for_dev["d1"] = 1.0
-weighted_replicas_for_dev["d2"] = 0.33
-weighted_replicas_for_dev["d3"] = 1.0
-
-weighted_replicas_by_tier = defaultdict(float)
-
-for dev in iter_devs():
-    if not dev['weight']:
-        continue
-    assigned_replicanths = weighted_replicas_for_dev[dev['id']]
-    dev_tier = (dev['region'], dev['zone'], dev['ip'], dev['id'])
-    for i in range(len(dev_tier) + 1):
-        tier = dev_tier[:i]
-        weighted_replicas_by_tier[tier] += assigned_replicanths
-print(weighted_replicas_by_tier)
-    
-"""
-
-"""
-
-from collections import defaultdict
-
-to_place = defaultdict(float)
-
-print(to_place["r1"])
-
-"""
+# 21) next itertools example
 
 
 """
@@ -415,6 +356,8 @@ b = next(data)
 
 """
 
+# 22) bitmap
+
 """
 import time
 import binascii
@@ -431,6 +374,8 @@ elapsed_hours = int(time.time() - 0) // 3600
 print(elapsed_hours)
 """
 
+# 23) enumerate
+
 """
 
 desired_lengths = [1024, 1024, 256]
@@ -439,13 +384,21 @@ print(list(enumerate(desired_lengths)))
 
 """
 
-# import itertools
+# 24) itertools repeat
 
-# NONE_DEV = 2 ** 16 - 1
+"""
 
-# desired_length = [0, 2, 3, 1]
+import itertools
 
-# print(list(itertools.repeat(NONE_DEV, 4)))
+NONE_DEV = 2 ** 16 - 1
+
+desired_length = [0, 2, 3, 1]
+
+print(list(itertools.repeat(NONE_DEV, 4)))
+
+"""
+
+# 25) default dictionary list
 
 """
 from collections import defaultdict
@@ -454,6 +407,8 @@ to_assign = defaultdict(list)
 
 print(to_assign[0])
 """
+
+# 26) part replica
 
 """
 
@@ -469,27 +424,35 @@ for part, replica in each_part_replica():
 
 """
 
-# print(list(enumerate(r2p2d)))
+# 27) some checks
 
-# part_moved_bitmap = None
+"""
 
-# part_moved_bitmap = bytearray(max(2 ** (3 - 3), 1))
+print(list(enumerate(r2p2d)))
 
-# print(list(part_moved_bitmap))
+part_moved_bitmap = None
 
-# lst = bytearray(10)
+part_moved_bitmap = bytearray(max(2 ** (3 - 3), 1))
 
-# print(list(lst))
+print(list(part_moved_bitmap))
 
-# import time
+lst = bytearray(10)
 
-# print(time.time())
+print(list(lst))
 
-# print(int(1608375856.55) // 3600)
+import time
 
-# print(44 < 0xff)
+print(time.time())
 
-# print(int("0xff", 16))
+print(int(1608375856.55) // 3600)
+
+print(44 < 0xff)
+
+print(int("0xff", 16))
+
+"""
+
+# 28) remove devs
 
 """
 
@@ -514,27 +477,123 @@ print(devs)
 
 """
 
+
+# 29) map function
+
+"""
+
+def get_len(n):    
+    print(len(n))
+
+# get_len([0,1,2,3])
+
+map(get_len, ([0,2,5], "salam", "hello", range(1,5)))
+
+"""
+
+
+# 30) getitem example
+
+"""
+
+class Person():
+
+    def __init__(self, name, age):
+        self.record = {"name": name,"age": age}
+
+    def __getitem__(self, key):
+        return self.record[key]
+
+
+
+person = Person("morteza", 29)
+
+print(person.__getitem__("age"))
+
+"""
+
+# 31) some checks
+
 """
 
 import random
 
-parts = 1024
-last_part_gather_start = 0
+def sort_key_for():
+    return (10, random.randint(0, 0xFFFF), 0)
 
-quarter_turn = (parts // 4)
-random_half = random.randint(0, parts // 2)
+print(sort_key_for())
 
-# print(random_half)
+print(int("0xFFFF",16))
 
-start = (last_part_gather_start + quarter_turn + random_half) % parts
+from collections import defaultdict
 
-last_part_gather_start = start
+tier2sort_key = defaultdict(tuple)
 
-# print(last_part_gather_start)
+tier2sort_key["a"] = (1,2,3)
+
+print(tier2sort_key.__getitem__("a"))
+
+print(tier2sort_key.__getitem__("b"))
 
 """
 
-undispersed_dev_replicas = []
+# 32) build_tier_tree()
 
-if not undispersed_dev_replicas:
-    print("not")
+"""
+
+from swift.common.ring import utils
+
+devs = [{"region":"r1", "zone":"z1", "ip":"s1", "weight":100.0, "id":0,"parts_wanted":682, "tiers":(('r1',), ('r1', 'z1'), ('r1', 'z1', 's1'), ('r1', 'z1', 's1', 0))}, 
+                  {"region":"r1", "zone":"z1", "ip":"s2", "weight":200.0, "id":1,"parts_wanted":1024,"tiers":(('r1',), ('r1', 'z1'), ('r1', 'z1', 's2'), ('r1', 'z1', 's2', 1))},
+                  {"region":"r1", "zone":"z1", "ip":"s2", "weight":50.0, "id":2,"parts_wanted":341,"tiers":(('r1',), ('r1', 'z1'), ('r1', 'z1', 's2'), ('r1', 'z1', 's2', 2))},
+                  {"region":"r1", "zone":"z2", "ip":"s3", "weight":500.0, "id":3,"parts_wanted":1025,"tiers":(('r1',), ('r1', 'z2'), ('r1', 'z2', 's3'), ('r1', 'z2', 's3', 3))}]
+
+print(utils.build_tier_tree(devs))
+
+"""
+
+# 33) random seed
+
+"""
+
+import random
+
+lst = [10,20,30,40]
+
+random.seed(5)
+
+random.shuffle(lst)
+
+print(lst)
+
+"""
+
+# 34) assert
+
+"""
+
+def test_sum():
+    assert sum([1, 2, 3]) == 6, "Should be 6"
+
+if __name__ == "__main__":
+    test_sum()
+    print("Everything passed")
+
+"""
+
+
+# 35) unittest
+
+import unittest
+
+
+class TestSum(unittest.TestCase):
+
+    def test_sum(self):
+        self.assertEqual(sum([1, 2, 3]), 6, "Should be 6")
+
+    def test_sum_tuple(self):
+        self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
+
+if __name__ == '__main__':
+    unittest.main()
